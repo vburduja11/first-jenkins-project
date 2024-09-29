@@ -1,42 +1,33 @@
-import {test} from '@playwright/test';
+import {test} from "playwright/test";
 
-test.describe('Test Group1', () => {
+test.describe("Test Group1", () => { 
 
-
-    test.beforeAll(async () => {
-      // Your setup steps go here
-      console.log('Before All is executed');
+    test.beforeAll( async () => { 
+        console.log("BeforeAll is executed");
     });
 
-    test.afterAll(async () => {
-      // Your teardown steps go here
-      console.log('After All is executed');
+    test.afterAll( async () => { 
+        console.log("AfterAll is executed");
     });
 
-    test.beforeEach(async () => {
-      // Your setup steps for each test go here
-      console.log('Before Each is executed');
+    test.beforeEach( async ({ page }) => { 
+        console.log("BeforeEach is executed");
     });
 
-    test.afterEach(async () => {
-      // Your teardown steps for each test go here
-      console.log('After Each is executed');
+    test.afterEach( async ({ page }) => { 
+        console.log("AfterEach is executed");
     });
 
+    test("Test Case 1", async ({ page }) => {
+      console.log('Test Case 1 is expected');
+    });
 
-    test('Test Case 1', async ({page}) => {
-      // Your test steps go here
-     console.log('Your test steps 1 go here');
-    })
+    test("Test Case 2", async ({ page }) => {
+        console.log('Test Case 2 is expected');
+    });
 
-    test('Test Case 2', async ({page}) => {
-      // Your test steps go here
-      console.log('Your test steps 2 go here');
-    })
+    test("Test Case 3", async ({ page }) => {
+        console.log('Test Case 3 is expected');
+    });
 
-    test('Test Case 3', async ({page}) => {
-      // Your test steps go here
-      console.log('Your test steps 3 go here');
-    })
-  
-})
+});
